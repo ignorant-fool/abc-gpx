@@ -1,3 +1,6 @@
+![abc-gpx logo](docs/figures/blocks_abcgpx.excalidraw.png)
+
+
 # abc-gpx
 A pseudo-inversion process for profile gravity data based on approximate bayesian computation methods.
 
