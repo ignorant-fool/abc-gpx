@@ -22,13 +22,6 @@ A pseudo-inversion process for profile gravity data based on approximate bayesia
 - This project utilizes Poetry for keeping package version control.
 - This project utilizes SimPEG for all it's geophysical modelling.
 
-## To-do:
-- Get a helper function written for generating dipping body coordinates
-- Tidy up grav_synthetic.py in general (s.t. it's not an exact copy of the SimPEG example)
-    - Fix s.t. the warnings no longer pop up as well (in the tensor mesh I believe?)
-- Fix the data outputs to go in the correct directory
-- Find open public ground gravity data to attempt a case-study on (GSQ/GSWA/etc)
-
 
 ## References:
 - Cockett, Rowan, Seogi Kang, Lindsey J. Heagy, Adam Pidlisecky, and Douglas W. Oldenburg. "SimPEG: An Open Source Framework for Simulation and Gradient Based Parameter Estimation in Geophysical Applications" Computers & Geosciences, September 2015. doi:10.1016/j.cageo.2015.09.015.
