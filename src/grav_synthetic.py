@@ -15,7 +15,6 @@ import numpy as np
 from scipy.interpolate import LinearNDInterpolator
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import os
 
 from discretize import TensorMesh
 from discretize.utils import mkvc
@@ -142,24 +141,18 @@ simulation = gravity.simulation.Simulation3DIntegral(
 # values in visualization.
 dpred = simulation.dpred(model)
 
-
 # need to add a 1D plot of the profile data here
 
 save_output = False
 if save_output:
     # have to re-jig this stuff
-    dir_path = os.path.dirname(__file__).split(os.path.sep)
-    dir_path.extend(["outputs"])
-    dir_path = os.path.sep.join(dir_path) + os.path.sep
+    out_path = "../data/"
 
-    if not os.path.exists(dir_path):
-        os.mkdir(dir_path)
-
-    fname = dir_path + "gravity_topo.txt"
+    fname = out_path + "gravity_topo.txt"
     np.savetxt(fname, np.c_[topo_xyz], fmt="%.4e")
 
     np.random.seed(737)
     maximum_anomaly = np.max(np.abs(dpred))
     noise = 0.01 * maximum_anomaly * np.random.rand(len(dpred))
-    fname = dir_path + "gravity_data.obs"
+    fname = out_path + "gravity_data.obs"
     np.savetxt(fname, np.c_[receiver_locations, dpred + noise], fmt="%.4e")
